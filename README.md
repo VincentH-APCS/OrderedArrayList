@@ -7,3 +7,8 @@ Added clarification of what "the point" of NoNullArrayList is
 /please commit??
 
 going over what we put for add() and some further clarification
+
+talking about the constructors and need for private variables
+--no need for instance variables because inherited from parent
+classes --unsure about the constructors
+-should be the same as the constructor for a regular ArrayList
