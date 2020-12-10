@@ -20,4 +20,13 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     }
     else super.set(index, element);
   }
+
+  public NoNullArrayList<T>(){
+    super.ArrayList<T>();
+  }
+
+  public NoNullArrayList<T>(int startingCapacity){
+    super.ArrayList<T>(startingCapacity);
+  }
+  
 }
