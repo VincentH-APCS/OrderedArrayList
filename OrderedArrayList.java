@@ -3,42 +3,36 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   public boolean add(T element){
     int ind = 0;
     for(int i = 0; i < this.size(); i++){
-      if(this.get(i).compareTo(element) == 0){
+      if(this.get(i).compareTo(element) >= 0){
         i = this.size();
       }
-      else if(this.get(i).compareTo(element) > 0){
-        ind++;
-      }
-      else this.add(ind, element);
+      else ind++;
     }
-   return true;
+    super.add(ind, element);
+    return true;
   }
 
   public void add(int index, T element){
     int ind = 0;
     for(int i = 0; i < this.size(); i++){
-      if(this.get(i).compareTo(element) == 0){
+      if(this.get(i).compareTo(element) >= 0){
         i = this.size();
       }
-      else if(this.get(i).compareTo(element) > 0){
-        ind++;
-      }
-      else super.add(ind, element);
+      else ind++;
     }
+     super.add(ind, element);
   }
 
   public T set(int index, T element){
     int ind = 0;
     for(int i = 0; i < this.size(); i++){
-      if(this.get(i).compareTo(element) == 0){
+      if(this.get(i).compareTo(element) >= 0){
         i = this.size();
       }
-      else if(this.get(i).compareTo(element) > 0){
-        ind++;
-      }
-      else return super.set(ind, element);
+      else ind++;
     }
-    return super.set(ind, element);
+    this.add(element);
+    return this.remove(ind);
   }
 
   public OrderedArrayList(){
