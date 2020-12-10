@@ -31,8 +31,12 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
       }
       else ind++;
     }
-    this.add(element);
-    return this.remove(ind);
+    super.add(ind, element);
+    if(ind < index){
+      return this.remove(index + 1)
+    }
+    else return this.remove(index);
+
   }
 
   public OrderedArrayList(){
